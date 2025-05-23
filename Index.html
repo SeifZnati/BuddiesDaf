@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mix It Right: Italian x Tunisian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1> Top Mix : Dafne X Seif </h1>
+
+<div class="container">
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        
+        <h3>Drinks & Alcohol</h3>
+        <div class="ingredient" onclick="addToBowl('Alcohol')">🍸 Alcohol</div>
+        <div class="ingredient" onclick="addToBowl('Italian Wine')">🍷 Italian Wine</div>
+        <div class="ingredient" onclick="addToBowl('Tunisian Wine')">🍷 Tunisian Wine</div>
+
+        <h3>Base Ingredients</h3>
+        <div class="ingredient" onclick="addToBowl('Bread')">🍞 Bread</div>
+        <div class="ingredient" onclick="addToBowl('Dough')">🥖 Dough</div>
+        <div class="ingredient" onclick="addToBowl('Pasta Dough')">🍝 Pasta Dough</div>
+        <div class="ingredient" onclick="addToBowl('Rice')">🍚 Rice</div>
+        <div class="ingredient" onclick="addToBowl('Tortilla')">🌮 Tortilla</div>
+
+        <h3>Vegetables & Herbs</h3>
+        <div class="ingredient" onclick="addToBowl('Tomato')">🍅 Tomato</div>
+        <div class="ingredient" onclick="addToBowl('Onion')">🧅 Onion</div>
+        <div class="ingredient" onclick="addToBowl('Garlic')">🧄 Garlic</div>
+        <div class="ingredient" onclick="addToBowl('Pepper')">🫑 Pepper</div>
+        <div class="ingredient" onclick="addToBowl('Basil')">🌿 Basil</div>
+        <div class="ingredient" onclick="addToBowl('Potato')">🥔 Potato</div>
+        <div class="ingredient" onclick="addToBowl('Avocado')">🥑 Avocado</div>
+        <div class="ingredient" onclick="addToBowl('Chili')">🌶️ Chili</div>
+        <div class="ingredient" onclick="addToBowl('Mloukhia Leaves')">🥬 Mloukhia Leaves</div>
+
+        <h3>Proteins</h3>
+        <div class="ingredient" onclick="addToBowl('Chicken')">🍗 Chicken</div>
+        <div class="ingredient" onclick="addToBowl('Meat')">🥩 Meat</div>
+        <div class="ingredient" onclick="addToBowl('Tuna')">🐟 Tuna</div>
+        <div class="ingredient" onclick="addToBowl('Seafood')">🦐 Seafood</div>
+        <div class="ingredient" onclick="addToBowl('Egg')">🥚 Egg</div>
+
+        <h3>Dairy & Cheese</h3>
+        <div class="ingredient" onclick="addToBowl('Cheese')">🧀 Cheese</div>
+        <div class="ingredient" onclick="addToBowl('Parmesan')">🧀 Parmesan</div>
+        <div class="ingredient" onclick="addToBowl('Mascarpone Cream')">🧁 Mascarpone Cream</div>
+        <div class="ingredient" onclick="addToBowl('Cream')">🥛 Cream</div>
+
+        <h3>Sauces & Condiments</h3>
+        <div class="ingredient" onclick="addToBowl('Tomato Sauce')">🥫 Tomato Sauce</div>
+        <div class="ingredient" onclick="addToBowl('Oil')">🛢️ Oil</div>
+        <div class="ingredient" onclick="addToBowl('Lime')">🍋 Lime</div>
+        <div class="ingredient" onclick="addToBowl('Salt')">🧂 Salt</div>
+        <div class="ingredient" onclick="addToBowl('Pepper')">🌶️ Pepper</div>
+
+        <h3>Dessert Ingredients</h3>
+        <div class="ingredient" onclick="addToBowl('Coffee')">☕ Coffee</div>
+        <div class="ingredient" onclick="addToBowl('Sugar')">🍬 Sugar</div>
+        <div class="ingredient" onclick="addToBowl('Pine Nuts')">🌰 Pine Nuts</div>
+        <div class="ingredient" onclick="addToBowl('Biscuits')">🍪 Biscuits</div>
+
+        <h3>Special Ingredients</h3>
+        <div class="ingredient" onclick="addToBowl('Saffron')">🌺 Saffron</div>
+        <div class="ingredient" onclick="addToBowl('Lentils')">🫘 Lentils</div>
+    </div>
+
+    <div class="bowl">
+        <h2>Mixing Bowl 🥣</h2>
+        <div id="bowlContents" class="bowl-items">Nothing added yet.</div>
+        <div class="button-group">
+            <button id="mixBtn" onclick="mixIngredients()">Mix It!</button>
+            <button id="clearBtn" onclick="clearBowl()">Clear Bowl</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <div class="menu">
+        <h2>Your Menu 📋</h2>
+        <div id="menuItems" class="menu-items">
+            <div class="menu-section">
+                <h3>🍸 Aperitifs & Starters</h3>
+                <div class="menu-item" data-dish="Spritz">Spritz</div>
+                <div class="menu-item" data-dish="Bruschetta">Bruschetta</div>
+                <div class="menu-item" data-dish="Brik">Brik</div>
+            </div>
+
+            <div class="menu-section">
+                <h3>🍝 Main Courses</h3>
+                <div class="menu-item" data-dish="Italian Pasta">Italian Pasta</div>
+                <div class="menu-item" data-dish="Ravioli">Ravioli</div>
+                <div class="menu-item" data-dish="Mloukhia">Mloukhia</div>
+                <div class="menu-item" data-dish="Wine Combo">Wine Combo</div>
+            </div>
+
+            <div class="menu-section">
+                <h3>🥗 Salads & Sides</h3>
+                <div class="menu-item" data-dish="Salad Mechweya">Salad Mechweya</div>
+                <div class="menu-item" data-dish="Arancini">Arancini</div>
+            </div>
+
+            <div class="menu-section">
+                <h3>🍰 Desserts</h3>
+                <div class="menu-item" data-dish="Zgougou">Zgougou</div>
+                <div class="menu-item" data-dish="Tiramisu">Tiramisu</div>
+            </div>
+
+            <div class="menu-section secret-menu" style="display: none;">
+                <h3>🔒 Secret Menu <span class="secret-counter">(0/5 discovered)</span></h3>
+                <div class="menu-item secret-item" data-dish="Paella">Paella (Spanish)</div>
+                <div class="menu-item secret-item" data-dish="Koshari">Koshari (Egyptian)</div>
+                <div class="menu-item secret-item" data-dish="Turkish Kebab">Turkish Kebab (Turkish)</div>
+                <div class="menu-item secret-item" data-dish="Tacos">Tacos (Mexican)</div>
+                <div class="menu-item secret-item" data-dish="Guacamole with Chips">Guacamole with Chips (Mexican)</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
