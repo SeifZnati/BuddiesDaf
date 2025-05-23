@@ -2,10 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mix It Right: Italian x Tunisian</title>
+    <title>Top Mix: Italian x Tunisian Cooking Game 🍝</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .loading.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
+
+<div id="loading" class="loading">
+    Mixing your ingredients... 🥣
+</div>
 
 <h1> Top Mix : Dafne X Seif </h1>
 
@@ -120,5 +141,25 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+    // Add loading indicator functionality
+    function showLoading() {
+        document.getElementById('loading').classList.add('active');
+    }
+    
+    function hideLoading() {
+        document.getElementById('loading').classList.remove('active');
+    }
+    
+    // Override the mixIngredients function to show loading
+    const originalMixIngredients = window.mixIngredients;
+    window.mixIngredients = function() {
+        showLoading();
+        setTimeout(() => {
+            originalMixIngredients();
+            hideLoading();
+        }, 1000);
+    }
+</script>
 </body>
 </html>
